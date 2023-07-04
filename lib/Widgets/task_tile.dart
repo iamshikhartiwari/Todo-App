@@ -13,7 +13,7 @@ class TaskView extends StatelessWidget {
         title: Text(
           taskTitle,
           style: TextStyle(
-              decoration: isChecked ? TextDecoration.lineThrough : null),
+              decoration: isChecked ? TextDecoration.lineThrough :null),
         ),
         trailing: Checkbox(
           activeColor: Colors.lightBlueAccent,
