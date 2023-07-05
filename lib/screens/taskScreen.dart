@@ -5,25 +5,19 @@ import 'package:todoey/modals/task_modal.dart';
 import 'package:provider/provider.dart';
 import 'package:todoey/modals/task_data.dart';
 
-class TaskScreen extends StatefulWidget {
-  @override
-  State<TaskScreen> createState() => _TaskScreenState();
-}
-
-class _TaskScreenState extends State<TaskScreen> {
-
+class TaskScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String taskData = '';
+    // final String taskData = '';
     return Scaffold(
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.lightBlueAccent,
           onPressed: () {
           showModalBottomSheet(context: context, builder: (BuildContext context) => AddTaskScreen(( newTaskTitle){
-            setState(() {
+            // setState(() {
               // tasks.add(Task(taskName: newTaskTitle));
-            });
+            // });
             Navigator.pop(context);
           }));
           },
