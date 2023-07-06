@@ -23,6 +23,7 @@ class TaskView extends StatelessWidget {
         value: isChecked,
         onChanged: (newValue) {
           checkboxCallBack(newValue);
+
         },
       ),
     );

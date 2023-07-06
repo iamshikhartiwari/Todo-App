@@ -23,9 +23,7 @@ class _TaskListState extends State<TaskList> {
               isChecked: taskData.tasks[index].isDone,
               taskTitle: taskData.tasks[index].taskName,
               checkboxCallBack: (checkboxState) {
-                // setState(() {
-                //   Provider.of<TaskData>(context).tasks[index].toggleDone();
-                // });
+                  taskData.updateTask(taskData.tasks[index]);
               },
             );
           },

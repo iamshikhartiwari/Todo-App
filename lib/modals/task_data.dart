@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:todoey/modals/task_modal.dart';
+import 'package:todoey/modals/task_modal.dart';
 import 'dart:collection';
 
 class TaskData extends ChangeNotifier{
@@ -16,5 +17,8 @@ class TaskData extends ChangeNotifier{
     final task = Task(taskName: newTaskTitle);
     _tasks.add(task);
     notifyListeners();
+  }
+  void updateTask(Task task){
+      task.toggleDone();
   }
 }
