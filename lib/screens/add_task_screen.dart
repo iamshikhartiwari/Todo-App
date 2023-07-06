@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:todoey/Widgets/task_list.dart';
+import 'package:todoey/modals/task_data.dart';
 import 'package:provider/provider.dart';
-class AddTaskScreen extends StatelessWidget {
 
+class AddTaskScreen extends StatelessWidget {
   late String newTask;
-  final Function addTaskCallBacks;
-  AddTaskScreen(this.addTaskCallBacks);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +32,7 @@ class AddTaskScreen extends StatelessWidget {
                 child: TextField(
               autofocus: true,
               textAlign: TextAlign.center,
-              onChanged: (newText){
+              onChanged: (newText) {
                 newTask = newText;
               },
               // style: ,
@@ -42,20 +41,16 @@ class AddTaskScreen extends StatelessWidget {
               height: 10,
             ),
             ElevatedButton(
-
               onPressed: () {
-                addTaskCallBacks(newTask);
-
+                Provider.of<TaskData>(context, listen:  false).addTask(newTask);
+              Navigator.pop(context);
               },
-
-
               child: Text(
                 "Push",
                 style: TextStyle(
                   color: Colors.white,
                 ),
               ),
-
             ),
           ],
         ),
